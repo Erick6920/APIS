@@ -9,10 +9,10 @@ app.use(cors());
 
 // Conexión a la base de datos de Hostinger
 const db = mysql.createConnection({
-  host: 'sqlXXX.main-hosting.eu', // <-- Reemplaza esto por tu host real
-  user: 'u123456789_user',        // <-- Reemplaza por tu usuario
-  password: 'tu_contraseña',         // <-- Reemplaza por tu password
-  database: 'u123456789_mibd'     // <-- Reemplaza por tu BD
+$host = '151.106.97.147';
+$db = 'u777467137_E_Sql';
+$user = 'u777467137_Erick_d';
+$pass = 'Tramontyna56';
 });
 
 db.connect((err) => {
