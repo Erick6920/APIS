@@ -1,6 +1,6 @@
 
 {
-    "name": "api-kpis-node",
+    "name": "api-kpis-php",
     "version": "1.0.0",
     "main": "api.js",
     "scripts": {
