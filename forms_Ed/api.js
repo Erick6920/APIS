@@ -1,4 +1,4 @@
-// api-kpis/app.js
+
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-// Conexión a la base de datos de Hostinger
+
 const db = mysql.createConnection({
 $host = '151.106.97.147';
 $db = 'u777467137_E_Sql';
@@ -23,7 +23,6 @@ db.connect((err) => {
   }
 });
 
-// Ruta para obtener todos los KPIs
 app.get('/kpis', (req, res) => {
   db.query('SELECT * FROM kpis', (err, results) => {
     if (err) {
