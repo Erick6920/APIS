@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 3000;
 
-// Configura la conexión a la base de datos en Hostinger
+// Configuración de la conexión a la base de datos en Hostinger
 const dbConfig = {
     host: '151.106.97.147',
     user: 'u777467137_Erick_d',
@@ -19,11 +19,11 @@ app.get('/', (req, res) => {
     res.json({ message: 'API funcionando correctamente' });
 });
 
-// Ruta para obtener datos de una tabla
+// Ruta para obtener datos de la tabla kpis
 app.get('/datos', (req, res) => {
     const connection = mysql.createConnection(dbConfig);
 
-    connection.query('SELECT * FROM tu_tabla', (error, results) => {
+    connection.query('SELECT * FROM kpis', (error, results) => {
         if (error) {
             console.error('Error al obtener datos:', error);
             res.status(500).json({ error: 'Error al obtener datos' });
