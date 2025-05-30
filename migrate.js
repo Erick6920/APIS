@@ -2,20 +2,21 @@ const axios = require('axios');
 const mssql = require('mssql');
 
 const config = {
-    user: 'tu_usuario_sql_server',
-    password: 'tu_password_sql_server',
-    server: 'localhost', // O la IP si es remoto
-    database: 'TuBaseDeDatos',
-    options: {
-        encrypt: false, // Cambia a true si usas Azure o TLS
-        trustServerCertificate: true
-    }
+  server: 'localhost',   // o 127.0.0.1    
+  database: 'Erick_Dev',
+  user: 'DESKTOP-KA3VKMH\Erick',
+  password: '',
+  options: {
+     instanceName: 'SQLEXPRESS',
+    encrypt: false,
+    trustServerCertificate: true
+  }
 };
 
 async function migrateData() {
     try {
         // 1. Traer datos de la API en Render
-        const response = await axios.get('https://tu-app-en-render.onrender.com/datos');
+        const response = await axios.get('https://apis-18ol.onrender.com');
         const datos = response.data;
 
         // 2. Conectar a SQL Server local
