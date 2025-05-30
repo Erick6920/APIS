@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.get('/datos', (req, res) => {
     const connection = mysql.createConnection(dbConfig);
 
-    connection.query('SELECT * FROM tu_tabla', (error, results) => {
+    connection.query('SELECT * FROM kpis', (error, results) => {
         if (error) {
             console.error('Error al obtener datos:', error);
             res.status(500).json({ error: 'Error al obtener datos' });
