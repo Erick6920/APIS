@@ -1,26 +1,13 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "mysql2": "^3.14.1"
-  },
-  "name": "express",
+  "name": "index.js",
   "version": "1.0.0",
-  "description": "API_WEB",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Erick6920/APIS.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Erick6920/APIS/issues"
-  },
-  "homepage": "https://github.com/Erick6920/APIS#readme"
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "cors": "^2.8.5"
+  }
 }
-
