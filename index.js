@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
@@ -14,12 +15,22 @@ const dbConfig = {
     database: 'u777467137_E_Sql'
 };
 
-// Ruta de prueba
+// Ruta principal que ahora devuelve los datos de la tabla kpis
 app.get('/', (req, res) => {
-    res.json({ message: 'API funcionando correctamente' });
+    const connection = mysql.createConnection(dbConfig);
+
+    connection.query('SELECT * FROM kpis', (error, results) => {
+        if (error) {
+            console.error('Error al obtener datos:', error);
+            res.status(500).json({ error: 'Error al obtener datos' });
+        } else {
+            res.json(results);
+        }
+        connection.end();
+    });
 });
 
-// Ruta para obtener datos de la tabla kpis
+// (Opcional) Puedes eliminar esta si ya no necesitas la ruta /datos
 app.get('/datos', (req, res) => {
     const connection = mysql.createConnection(dbConfig);
 
