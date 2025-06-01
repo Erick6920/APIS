@@ -16,12 +16,22 @@ const dbConfig = {
     database: 'u777467137_E_Sql'
 };
 
-// Ruta de prueba
-app.get('/', (req, res) => {
-    res.json({ message: 'API funcionando correctamente' });
-});
 
 // Ruta para obtener datos de la tabla kpis
+app.get('/', (req, res) => {
+    const connection = mysql.createConnection(dbConfig);
+
+    connection.query('SELECT * FROM kpis', (error, results) => {
+        if (error) {
+            console.error('Error al obtener datos:', error);
+            res.status(500).json({ error: 'Error al obtener datos' });
+        } else {
+            res.json(results);
+        }
+        connection.end();
+    });
+});
+
 app.get('/datos', (req, res) => {
     const connection = mysql.createConnection(dbConfig);
 
@@ -39,3 +49,4 @@ app.get('/datos', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+
