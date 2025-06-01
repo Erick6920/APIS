@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 // ✅ Crear pool de conexión UNA VEZ al iniciar
 const pool = mysql.createPool({
-  host: '151.106.97.147',
+  host: '151.106.110.1',
   user: 'u777467137_Erick_d',
   password: 'Tramontyna56',
   database: 'u777467137_E_Sql'
