@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 // Configuración de la conexión a la base de datos en Hostinger
 const dbConfig = {
-    host: '151.106.97.147',
+    host: '34.213.214.55',
     user: 'u777467137_Erick_d',
     password: 'Tramontyna56',
     database: 'u777467137_E_Sql'
